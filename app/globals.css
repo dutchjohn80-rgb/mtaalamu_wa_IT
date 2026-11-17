@@ -129,6 +129,69 @@ body::after {
 .big-link { display: block; font: 400 clamp(40px, 9vw, 128px)/0.95 var(--display); text-transform: uppercase; padding: 56px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow-wrap: anywhere; transition: color 0.2s; }
 .big-link:hover { color: var(--accent); }
 .big-link small { display: block; font: 500 14px var(--mono); color: var(--muted); letter-spacing: 0.1em; margin-bottom: 14px; }
+.small-link { font-size: clamp(30px, 6vw, 90px); padding: 24px 0; }
+
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.testimonial { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; min-height: 220px; }
+.quote { font-size: 1.1rem; color: var(--ink); line-height: 1.7; }
+.client-meta { margin-top: 24px; display: flex; flex-direction: column; gap: 4px; }
+.client-meta strong { font-size: 1rem; }
+.client-meta span { color: var(--muted); font: 500 13px var(--mono); }
+
+.process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.process-card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+.process-index { display: inline-block; font: 500 14px var(--mono); color: var(--accent); margin-bottom: 20px; }
+.process-card h3 { font-size: clamp(26px, 3vw, 42px); margin-bottom: 12px; }
+.process-card p { color: var(--muted); }
+
+.impact-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.impact-card, .trust-card { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 24px; }
+.impact-card strong { display: block; font: 400 clamp(32px, 5vw, 64px)/0.95 var(--display); color: var(--accent); }
+.impact-card span { color: var(--muted); font: 500 13px var(--mono); text-transform: uppercase; letter-spacing: 0.08em; }
+
+.trust-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.trust-card h3 { font-size: clamp(26px, 3vw, 42px); margin-bottom: 10px; }
+.trust-card p { color: var(--muted); }
+
+.package-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.package-card { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 18px; }
+.package-card.featured { border-color: var(--accent); box-shadow: inset 0 0 0 1px rgba(255, 79, 31, 0.5); }
+.package-badge { display: inline-flex; width: fit-content; font: 500 11px var(--mono); text-transform: uppercase; letter-spacing: 0.08em; padding: 6px 10px; border-radius: 999px; background: rgba(255, 79, 31, 0.12); color: var(--accent); }
+.package-card h3 { font-size: clamp(30px, 4vw, 48px); }
+.package-price { font: 700 18px var(--mono); color: var(--ink); }
+.package-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; color: var(--muted); }
+.package-card li::before { content: "•"; color: var(--accent); margin-right: 10px; }
+
+.contact-layout { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 36px; align-items: start; }
+.contact-card, .inquiry-form { background: var(--surface); border: 1px solid var(--line); border-radius: 28px; padding: 28px; }
+.inquiry-form { display: flex; flex-direction: column; gap: 20px; }
+.field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field-group { display: flex; flex-direction: column; gap: 8px; }
+.field-group label { font: 500 13px var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.field-group input, .field-group select, .field-group textarea {
+  width: 100%; background: rgba(255,255,255,0.02); border: 1px solid var(--line); border-radius: 14px; color: var(--ink);
+  padding: 14px 16px; font: inherit; resize: vertical;
+}
+.field-group input:focus, .field-group select:focus, .field-group textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.submit-btn { width: fit-content; cursor: pointer; }
+
+.faq-list { display: grid; gap: 16px; }
+.faq-item { border-top: 1px solid var(--line); padding-top: 22px; }
+.faq-item h3 { font-size: clamp(26px, 3vw, 42px); margin-bottom: 10px; }
+.faq-item p { color: var(--muted); }
+
+.cta-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 18px; }
+.cta-link { padding-top: 24px; padding-bottom: 24px; }
+.wa-button {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 170px; height: 64px; background: #25D366; color: #0b0b0c;
+  font: 700 15px var(--mono); text-transform: uppercase; letter-spacing: 0.08em; border-radius: 999px; border: none; cursor: pointer;
+}
+.wa-button:hover { background: #fff; }
+
+@media (max-width: 900px) {
+  .testimonial-grid, .process-grid, .impact-grid, .package-grid, .contact-layout, .field-grid, .cta-row, .trust-grid { grid-template-columns: 1fr; }
+  .cta-row { display: grid; }
+}
 
 /* Case study */
 .case-hero { background: var(--bg); color: var(--fg); border-radius: 0 0 40px 40px; padding: 72px 0 64px; }
@@ -143,6 +206,16 @@ body::after {
 .next small { font: 500 14px var(--mono); }
 .next .t { display: block; font: 400 clamp(40px, 7vw, 100px)/0.95 var(--display); text-transform: uppercase; margin-top: 12px; }
 @media (max-width: 800px) { .cols { grid-template-columns: 1fr; gap: 32px; } .case-art { padding: 0 16px; } }
+
+.legal-shell { padding-top: 72px; padding-bottom: 80px; }
+.legal-page { max-width: 980px; margin: 0 auto; }
+.legal-page h1 { font-size: clamp(42px, 8vw, 90px); margin-top: 18px; margin-bottom: 18px; }
+.legal-intro { color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; }
+.legal-card { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 28px; margin-bottom: 20px; }
+.legal-card h2 { font-size: clamp(24px, 4vw, 42px); margin-bottom: 14px; }
+.legal-card p { color: var(--muted); margin-bottom: 12px; }
+.legal-card strong { color: var(--ink); }
+.legal-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
 
 /* Rows, chips, prose */
 .prose { display: flex; flex-direction: column; gap: 18px; max-width: 62ch; font-size: 20px; }
